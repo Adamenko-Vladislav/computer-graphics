@@ -652,3 +652,5 @@ cython_debug/
 *.cflags
 
 ./.idea
+.idea/computer-graphics.iml
+
