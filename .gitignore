@@ -651,6 +651,10 @@ cython_debug/
 *.cxxflags
 *.cflags
 
-./.idea
-.idea/computer-graphics.iml
+lab_1/.idea
 
+.idea/.gitignore
+.idea/computer-graphics.iml
+.idea/git_toolbox_prj.xml
+.idea/google-java-format.xml
+.idea/misc.xml
