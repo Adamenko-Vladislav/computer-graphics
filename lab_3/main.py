@@ -12,7 +12,7 @@ class RasterizationApp:
         self.draw_axes_and_grid()
 
         # Примеры вызова растеризации
-        self.draw_line_dda(50, 50, 200, 200, "blue")
+        self.draw_line(50, 50, 200, 200, "blue")
         self.draw_line_bresenham(50, 100, 200, 250, "green")
         self.draw_circle_bresenham(400, 150, 50, "red")
 
@@ -49,7 +49,7 @@ class RasterizationApp:
 
             self.canvas.create_text(310, 300 - i * 20, text=str(i), anchor=tk.W)
 
-    def draw_line_dda(self, x1, y1, x2, y2, color):
+    def draw_line(self, x1, y1, x2, y2, color):
         dx = x2 - x1
         dy = y2 - y1
         steps = max(abs(dx), abs(dy))
