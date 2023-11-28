@@ -59,6 +59,7 @@ class RasterizationApp:
 
         x, y = x1, y1
         for _ in range(steps + 1):
+            print(f"Drawing rectangle at ({x}, {y}) with color {color}")
             self.canvas.create_rectangle(x, y, x + 2, y + 2, fill=color)
             x += x_increment
             y += y_increment
@@ -70,6 +71,7 @@ class RasterizationApp:
         x, y = x1, y1
         d = 2 * dy - dx
         for _ in range(dx + 1):
+            print(f"Drawing line (Bresenham) at ({x}, {y}) with color {color}")
             self.canvas.create_rectangle(x, y, x + 2, y + 2, fill=color)
             if d >= 0:
                 y += 1
@@ -93,13 +95,21 @@ class RasterizationApp:
             self.draw_circle_points(xc, yc, x, y, color)
 
     def draw_circle_points(self, xc, yc, x, y, color):
+        print(f"Drawing circle point at ({xc + x}, {yc + y}) with color {color}")
         self.canvas.create_rectangle(xc + x, yc + y, xc + x + 2, yc + y + 2, fill=color)
+        print(f"Drawing circle point at ({xc - x}, {yc + y}) with color {color}")
         self.canvas.create_rectangle(xc - x, yc + y, xc - x + 2, yc + y + 2, fill=color)
+        print(f"Drawing circle point at ({xc + x}, {yc - y}) with color {color}")
         self.canvas.create_rectangle(xc + x, yc - y, xc + x + 2, yc - y + 2, fill=color)
+        print(f"Drawing circle point at ({xc - x}, {yc - y}) with color {color}")
         self.canvas.create_rectangle(xc - x, yc - y, xc - x + 2, yc - y + 2, fill=color)
+        print(f"Drawing circle point at ({xc + y}, {yc + x}) with color {color}")
         self.canvas.create_rectangle(xc + y, yc + x, xc + y + 2, yc + x + 2, fill=color)
+        print(f"Drawing circle point at ({xc - y}, {yc + x}) with color {color}")
         self.canvas.create_rectangle(xc - y, yc + x, xc - y + 2, yc + x + 2, fill=color)
+        print(f"Drawing circle point at ({xc + y}, {yc - x}) with color {color}")
         self.canvas.create_rectangle(xc + y, yc - x, xc + y + 2, yc - x + 2, fill=color)
+        print(f"Drawing circle point at ({xc - y}, {yc - x}) with color {color}")
         self.canvas.create_rectangle(xc - y, yc - x, xc - y + 2, yc - x + 2, fill=color)
 
     def zoom_in(self):
