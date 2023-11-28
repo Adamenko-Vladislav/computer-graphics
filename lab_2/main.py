@@ -109,7 +109,7 @@ def process_images():
 
         image_files = os.listdir(input_directory)
         for image_file in image_files:
-            if image_file.endswith('.png') or image_file.endswith('.jpg'):
+            if image_file.endswith('.png') or image_file.endswith('.jpg') or image_file.endswith('.jpeg'):
                 image_path = os.path.join(input_directory, image_file)
                 image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
